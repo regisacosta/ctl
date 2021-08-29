@@ -1,0 +1,83 @@
+Title: Indigency "Flowchart"
+Author: Regis Acosta
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Indigency "Flowchart"</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/level/2/#mission_p1">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if you qualify for appointed counsel in New Jersey.</p>
+
+Q(1): Have you been charged with the commission of an indictable (felony) offense? 
+A:	Yes
+	Q(1.1):GOTO:2
+A:	No
+	Q(1.2):GOTO:Ineligible
+
+Q(2): What is the size of your household?
+A:	One Person
+	Q(2.1):GOTO:3
+A:	Two People
+	Q(2.2):GOTO:4
+A:	Three People
+	Q(2.3):GOTO:5
+A:	Four People
+	Q(2.4):GOTO:6
+A:	Five People
+	Q(2.5):GOTO:7
+A:	Six People
+	Q(2.6):GOTO:8
+A:	Seven People
+	Q(2.7):GOTO:9
+A:	Eight People
+	Q(2.8):GOTO:10
+
+Q(3): Do you make more than $15,950 per year?
+A: 	Yes
+	Q(3.1):GOTO:Ineligible
+A:	No
+	Q(3.2):GOTO:Expect
+Q(4): Does your household make more than $21,550 per year?
+A: 	Yes
+	Q(4.1):GOTO:Ineligible
+A:	No
+	Q(4.2):GOTO:Expect
+Q(5): Does your household make more than $27,150 per year?
+A: 	Yes
+	Q(5.1):GOTO:Ineligible
+A:	No
+	Q(5.2):GOTO:Expect
+Q(6): Does your household make more than $32,750 per year?
+A: 	Yes
+	Q(6.1):GOTO:Ineligible
+A:	No
+	Q(6.2):GOTO:Expect
+Q(7): Does your household make more than $38,350 per year?
+A: 	Yes
+	Q(7.1):GOTO:Ineligible
+A:	No
+	Q(7.2):GOTO:Expect
+Q(8): Does your household make more than $43,950 per year?
+A: 	Yes
+	Q(8.1):GOTO:Ineligible
+A:	No
+	Q(8.2):GOTO:Expect
+Q(9): Does your household make more than $49,550 per year?
+A: 	Yes
+	Q(9.1):GOTO:Ineligible
+A:	No
+	Q(9.2):GOTO:Expect
+Q(10): Does your household make more than $55,150 per year?
+A: 	Yes
+	Q(10.1):GOTO:Ineligible
+A:	No
+	Q(10.2):GOTO:Expect
+
+Q(Expect): Would it appear that the you have or reasonably expect to have means
+to meet some part, though not all, of the cost of the services rendered?
+A:	Yes
+	Q(Expect1):GOTO:Eligible1
+A:	No
+	Q(Expect2):GOTO:Eligible2
+
+Q(Eligible1): You are eligible but will have some financial responsibility for the legal services rendered.
+Q(Eligible2): You are eligible.
+Q(Ineligible): You are ineligible.
