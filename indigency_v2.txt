@@ -44,6 +44,11 @@ function fedpov(house,income,percentage){
 </script>
 
 
+Q(1): This is an interview created for educational purposes.
+A:	I understand and I wish to continue.
+	Q(1.1):GOTO:house
+A:	I wish to leave this interview.
+	Q(1.2):GOTO:End
 
 Q(house): How many people are in your household?
 X:number
@@ -62,3 +67,4 @@ A:	No
 Q(Eligible1): You are eligible but will have some financial responsibility for the legal services rendered.
 Q(Eligible2): You are eligible.
 Q(Ineligible): You are ineligible.
+Q(End): End
