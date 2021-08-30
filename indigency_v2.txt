@@ -1,0 +1,64 @@
+Title: Indigency "Flowchart"
+Author: Regis Acosta
+Before: <link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/howto/qna/style/style.css">
+<div id="icon" style="background-size: 110px 99px;background-image: url('https://suffolklitlab.org/howto/qna/images/maxheadroom.gif');"></div>
+<h2 style="text-align:center;">Indigency "Flowchart"</h2>
+<p><b>This is a <a href="https://www.codingthelaw.org/level/2/#mission_p1">class project</a>. You should not rely on it as a source of legal information!</b></p>
+<p>Answer the following questions to see if you qualify for appointed counsel in New Jersey.</p>
+After:
+<script>
+function fedpov(house,income,percentage){
+	// Determines if your income is less than or equal to
+	// a percentage of the 2021 federal poverty guidelines
+	// for the contiguous United States. See
+	// https://aspe.hhs.gov/poverty-guidelines
+
+		var line = NaN;
+
+		if (house == 1) {
+			line = 12880;
+		} else if (house == 2) {
+			line = 17420;
+		} else if (house == 3) {
+			line = 21960;
+		} else if (house == 4) {
+			line = 26500;
+		} else if (house == 5) {
+			line = 31040;
+		} else if (house == 6) {
+			line = 35580;
+		} else if (house == 7) {
+			line = 40120;
+		} else if (house == 8) {
+			line = 44660;
+		} else if (house > 8) {
+			line = 44660 + (house-8)*4540;
+		}
+
+		if (income <= (line*(percentage/100))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+</script>
+
+
+
+Q(house): How many people are in your household?
+X:number
+	Q(income): How much income does your household bring in per year in after tax dollars, including income from public benefits?
+	X:number
+		Q(civcrim): Are you facing a civil or criminal matter?
+		A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('Ineligible') } else { goto('Ineligible') } ]: Civil
+		A[javascript:if (fedpov(getvar('house'),getvar('income'),125)){ goto('Expect') } else { goto('Ineligible') }  ]: Criminal
+Q(Expect): Would it appear that the you have or reasonably expect to have means
+to meet some part, though not all, of the cost of the services rendered?
+A:	Yes
+	Q(Expect1):GOTO:Eligible1
+A:	No
+	Q(Expect2):GOTO:Eligible2
+
+Q(Eligible1): You are eligible but will have some financial responsibility for the legal services rendered.
+Q(Eligible2): You are eligible.
+Q(Ineligible): You are ineligible.
